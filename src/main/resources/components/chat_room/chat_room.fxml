@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root prefHeight="68.0" prefWidth="276.0" style="-fx-border-color: gray; -fx-border-width: 2; -fx-border-radius: 8;" type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="279.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+         <Label fx:id="abbreviation" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="72.0" text="ИЧ">
+            <font>
+               <Font name="Bell MT" size="36.0" />
+            </font>
+         </Label>
+      <VBox alignment="CENTER" prefHeight="78.0" prefWidth="175.0" spacing="15.0" HBox.hgrow="ALWAYS">
+         <children>
+            <Label fx:id="chatroom" prefHeight="17.0" prefWidth="188.0" text="Имя чата" />
+            <Label fx:id="lastMsgPreview" prefHeight="17.0" prefWidth="185.0" text="Preview последнего сообщения" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+   </children>
+</HBox>
+</fx:root>
