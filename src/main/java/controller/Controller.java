@@ -1,4 +1,4 @@
-package сontroller;
+package controller;
 
 import static msg_processor.MessageConstants.kAuthentificationOk;
 import client.HandlerInputMessage;

@@ -4,7 +4,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.application.Platform;
 import javafx.scene.layout.VBox;
-import сontroller.HandlerLogIn;
+import controller.HandlerLogIn;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 import javafx.fxml.FXML;

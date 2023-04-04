@@ -1,4 +1,4 @@
-package сontroller;
+package controller;
 
 import java.nio.channels.SocketChannel;
 import client.CommandLinesParams;
@@ -139,19 +139,24 @@ public class SocketController extends TimerTask
             }
 
             int bufferPosition = receive.position();
-            receive.flip();
+            receive.rewind();
 
-            GenericPack decoded = Decoder.decodeGenericPack(receive);
-            if(decoded == null)
+            while(true)
             {
-                receive.position(bufferPosition);
-                logger.info("can not decode");
-                break;
-            }
+                GenericPack decoded = Decoder.decodeGenericPack(receive);
 
-            handler.handleInputMessage(decoded);
-            receive.compact();
-            receive.position(0);
+                if(decoded == null)
+                {
+                    receive.position(bufferPosition);
+                    logger.info("can not decode");
+                    break;
+                }
+
+                handler.handleInputMessage(decoded);
+                bufferPosition -= receive.position();
+                receive.compact();
+                receive.rewind();
+            }
         }
     }
 

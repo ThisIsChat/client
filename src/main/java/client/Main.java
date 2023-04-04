@@ -8,7 +8,7 @@ import javafx.event.EventHandler;
 import javafx.stage.WindowEvent;
 import components.signin.Signin;
 import java.util.logging.Logger;
-import сontroller.Controller;
+import controller.Controller;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import java.io.IOException;
