@@ -2,6 +2,9 @@ package controller;
 
 import static msg_processor.MessageConstants.kAuthentificationOk;
 import client.HandlerInputMessage;
+
+import java.util.LinkedList;
+import java.util.List;
 import java.util.logging.Logger;
 import javafx.stage.Stage;
 import msg_processor.*;
@@ -11,6 +14,7 @@ import client.Iface;
 public class Controller  implements HandlerMsg, HandlerLogIn, HandlerSigIn, OutMessenger
 {
     private HandlerInputMessage handlerInputMessage;
+    private List<GenericPack> noneDeliveredMessages;
     private SocketController socketController;
     private Shadow shadow;
     private Logger logger;
@@ -20,6 +24,7 @@ public class Controller  implements HandlerMsg, HandlerLogIn, HandlerSigIn, OutM
 
     {
         logger = Logger.getLogger(Controller.class.getName());
+        noneDeliveredMessages = new LinkedList<>();
         shadow = new Shadow();
         myId = "";
     }
@@ -59,6 +64,9 @@ public class Controller  implements HandlerMsg, HandlerLogIn, HandlerSigIn, OutM
     public void setHandlerInputMessage(HandlerInputMessage handlerInputMessage)
     {
         this.handlerInputMessage = handlerInputMessage;
+
+        for(final GenericPack msg: noneDeliveredMessages)
+            this.handlerInputMessage.handleTextMessage(msg);
     }
 
     /**
@@ -149,6 +157,8 @@ public class Controller  implements HandlerMsg, HandlerLogIn, HandlerSigIn, OutM
 
         if(handlerInputMessage != null)
             handlerInputMessage.handleTextMessage(message);
+        else
+            noneDeliveredMessages.add(message);
     }
 
     /**
