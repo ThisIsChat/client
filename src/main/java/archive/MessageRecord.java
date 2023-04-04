@@ -1,12 +1,12 @@
 package archive;
 
 import java.time.format.DateTimeFormatter;
+
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
-
 
 @Getter
 @AllArgsConstructor
@@ -14,7 +14,6 @@ import lombok.Setter;
 @Setter
 public class MessageRecord
 {
-
     static final private String dateFormat;
 
     static

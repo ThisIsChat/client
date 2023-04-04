@@ -1,6 +1,6 @@
 package client;
 
-import сontroller.OutMessenger;
+import controller.OutMessenger;
 import archive.MessageArchive;
 import archive.MessageRecord;
 import components.chat_room.ChatRoomController;

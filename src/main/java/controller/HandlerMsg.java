@@ -1,4 +1,4 @@
-package сontroller;
+package controller;
 
 import msg_processor.GenericPack;
 import msg_processor.SearchPersonAnswer;
