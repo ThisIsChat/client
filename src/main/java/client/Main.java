@@ -91,11 +91,11 @@ public class Main extends Application implements Iface
         {
             stage.close();
             InterfaceController interfaceController = new InterfaceController(controller, controller.getMyId());
-            controller.setHandlerInputMessage(interfaceController);
             Scene scene = new Scene(interfaceController);
             stage.setTitle("Post");
             stage.setScene(scene);
             stage.show();
+            controller.setHandlerInputMessage(interfaceController);
         });
     }
 
